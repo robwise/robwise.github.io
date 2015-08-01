@@ -4,7 +4,7 @@ email: robert.wise@outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   Personal website and blog for Rob Wise (web developer).
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "/" # the base hostname & protocol for your site
+url: "https://robwise.github.io" # the base hostname & protocol for your site
 twitter_username: RobAWise
 github_username:  robwise
 timezone: America/New_York
