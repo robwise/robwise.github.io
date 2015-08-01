@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% if page.author %}
+    <meta name="author" content="{{ page.author }}">
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.tags and page.tags.size > 0 %}
+    <meta name="keywords" content="{{ page.tags | join:', ' }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RobAWise" />
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+
+  <title>
+    {% if page.title %}
+      {{ page.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- Description -->
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- XML -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ "main.css" | prepend: site.url }}">
+
+  <!-- Typekit -->
+  <script src="//use.typekit.net/ovl2hpu.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- Main javascript -->
+  <script type="text/javascript" src="{{ "main.js" | prepend: site.url }}"></script>
+
+ </head>

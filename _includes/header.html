@@ -1,0 +1,25 @@
+<header>
+  <nav>
+    <ul class="nav-links">
+      <li class="nav-link-item nav-link-item-home">
+        <a href="{{ site.baseurl }}/" class="nav-link nav-link-home">
+          <span class="home-icon" aria-label="Home"></span></a>
+      </li>
+
+      {% for page_enum in site.pages %}
+        {% if page_enum.title %}
+          {% assign is_active_class = nil %}
+          {% if page_enum.title == page.title %}
+            {% assign is_active_class = " is-active" %}
+          {% else %}
+            {% assign is_active_class = "" %}
+          {% endif %}
+          <li class="nav-link-item">
+            <a href="{{ page_enum.url | remove: '/index.html' | prepend: site.baseurl }}" class="nav-link{{ is_active_class }}">
+              {{ page_enum.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

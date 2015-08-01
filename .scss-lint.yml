@@ -1,0 +1,38 @@
+# https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
+linters:
+  # ColorVariable:
+  #   enabled: false
+  Comment:
+    enabled: false
+  DeclarationOrder:
+    enabled: false
+  # DuplicateProperty:
+  #   enabled: false
+  HexNotation:
+    # enabled: false
+    style: lowercase
+  Indentation:
+    # enabled: false
+    width: 2
+  LeadingZero:
+    enabled: false
+  # MergeableSelector:
+  #   enabled: false
+  # NestingDepth:
+  #   enabled: false
+  PropertySortOrder:
+    enabled: false
+  # SelectorDepth:
+  #   enabled: false
+  # SingleLinePerSelector:
+  #   enabled: false
+  # SpaceAfterPropertyColon:
+  #   enabled: false
+  # SpaceBeforeBrace:
+  #   enabled: false
+  StringQuotes:
+    enabled: false
+  # TrailingSemicolon:
+  #   enabled: false
+  # VendorPrefix:
+  #   enabled: false

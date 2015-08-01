@@ -1,0 +1,57 @@
+@mixin neon-glow($glow-only-on-hover: true, $glow-base-color: rgba(255, 255, 255, .3), $hover-color: #0ff, $normal-glow: #ff00de, $transition-speed: 400ms) {
+  $base-size: .2em;
+
+  @if $glow-only-on-hover == false {
+    text-shadow: 0 0 $base-size $glow-base-color, 0 0 $base-size*2 $glow-base-color, 0 0 $base-size*3 $glow-base-color, 0 0 $base-size*4 $normal-glow, 0 0 $base-size*7 $normal-glow, 0 0 $base-size*8 $normal-glow, 0 0 $base-size*10 $normal-glow;
+  }
+  transition: text-shadow $transition-speed cubic-bezier(.42, 0, .58, 1);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-shadow: 0 0 $base-size $glow-base-color, 0 0 $base-size*2 $glow-base-color, 0 0 $base-size*3 $glow-base-color, 0 0 $base-size*4 $hover-color, 0 0 $base-size*7 $hover-color, 0 0 $base-size*8 $hover-color, 0 0 $base-size*10 $hover-color;
+  }
+}
+
+
+// Adds a border to make a link look like a button with transparent fill
+@mixin outlined-link($color: $homepage-color, $action-color: shade($homepage-color, 40%)) {
+  border: .1em solid $color;
+  border-radius: .2em;
+  color: $color;
+  line-height: 1;
+  padding: .2em .4em .3em;
+  transition: all 0ms; // otherwise the border and the text change at different speeds
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $action-color;
+    color: $action-color;
+    transition: all 0ms;
+  }
+}
+
+@mixin double-gradient($angle,
+                       $color-one,
+                       $transparency-one,
+                       $color-two,
+                       $transparency-two) {
+
+  @include linear-gradient($angle,
+                           transparentize($color-one,
+                                          $transparency-one),
+                           transparentize($color-two,
+                                          $transparency-two));
+  @include position(absolute, 0 0 0 0);
+}
+
+@mixin vertical-center($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@function image-path($image-name) {
+  @return "../images/" + $image-name;
+}

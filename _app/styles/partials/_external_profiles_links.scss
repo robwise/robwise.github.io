@@ -1,0 +1,33 @@
+$external-profile-link-font-size: modular-scale(2);
+$external-profile-link-color: $base-orange-faded;
+$external-profile-link-action-color: $base-orange-faded-action;
+
+.external-profiles-link-list {
+  font-size: modular-scale(3);
+
+  > li {
+    display: inline-block;
+  }
+}
+
+.external-profile-link {
+  $glow-parameters: (
+    "glow-only-on-hover": true,
+    "glow-base-color": transparentize($base-blue, .5),
+    "hover-color": transparentize($base-blue, 1),
+    "transition-speed": 400ms
+  );
+  color: $external-profile-link-color;
+  font-size: modular-scale(2);
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $external-profile-link-action-color;
+  }
+}
+
+.external-profile-link-text {
+  font-family: $helvetica;
+  display: none;
+}

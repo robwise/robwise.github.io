@@ -1,0 +1,43 @@
+.l-default {
+  height: 100%;
+
+  > .content {
+    @include outer-container();
+    padding: 0 2em 2em;
+    margin-bottom: (-.5 * $footer-height);
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 78%;
+
+    @include media($medium-screen) {
+      max-width: 55em;
+      min-height: 75%;
+    }
+
+    @include media($extra-large-screen) {
+      min-height: 80%;
+    }
+  }
+
+  .nav-link {
+    @include media($large-screen-up) {
+      font-size: .75em;
+    }
+
+    &.nav-link-home {
+      @include media ($large-screen-up) {
+        font-size: modular-scale(1);
+      }
+    }
+  }
+
+  .external-profiles-link-list {
+    text-align: center;
+    position: static;
+    font-size: modular-scale(1);
+
+    @include media($medium-screen-up) {
+      font-size: modular-scale(2);
+    }
+  }
+}

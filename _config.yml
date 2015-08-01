@@ -1,0 +1,53 @@
+# Site settings
+title: Rob Wise
+email: robert.wise@outlook.com
+description: > # this means to ignore newlines until "baseurl:"
+  Personal website and blog for Rob Wise (web developer).
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "/" # the base hostname & protocol for your site
+twitter_username: RobAWise
+github_username:  robwise
+timezone: America/New_York
+permalink: /:title # no trailing slash may cause issues
+keep_files: []
+exclude: ["bower.json",
+          "package.json",
+          "LICENSE",
+          "README.md",
+          "gulpfile.js",
+          "_app",
+          "node_modules",
+          "*.sublime-project",
+          "*.sublime-workspace",
+          "Gemfile",
+          "Gemfile.lock"]
+
+# Markdown settings
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables",
+               "autolink",
+               "strikethrough",
+               "space_after_headers",
+               "with_toc_data",
+               "fenced_code_blocks",
+               "no_intra_emphasis"]
+
+# Defaults (these are overridden if explicitly set in front matter)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Rob Wise"
+      permalink: /blog/:title
+  -
+    scope:
+      path: ""
+      type: "drafts"
+    values:
+      layout: "post"
+      author: "Rob Wise"
+      permalink: /blog/:title

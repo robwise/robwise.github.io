@@ -1,0 +1,201 @@
+$homepage-external-profile-link-text-line-height: $external-profile-link-font-size;
+$homepage-external-profile-link-text-top-margin: $external-profile-link-font-size * .5;
+
+.homepage-body {
+  $vertical-angle: 0deg;
+  $horizontal-angle: 90deg;
+  $image-gradient-color-bottom: $base-orange;
+  $image-gradient-color-top: $base-blue;
+  $transparency-top: 0.6;
+  $transparency-bottom: 0.9;
+  $image-gradient-color-left: darken($image-gradient-color-top, 50%);
+  $transparency-left: 0.8;
+  $image-gradient-color-right: darken($image-gradient-color-bottom, 50%);
+  $transparency-right: 0.8;
+
+  overflow: hidden;
+
+  @include media($large-screen-up) {
+    font-size: .75em;
+  }
+
+  &:before {
+    @include size(100% 100%);
+    background-attachment: fixed;
+    background-origin: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: " ";
+    display: block;
+    max-width: none;
+    opacity: 1;
+    position: fixed;
+    transform: scale(1.1); /* images are actually 1.1 their named size to
+                              account for this: e.g., hero-cropped_320.jpg is actualy
+                              1.1*320 px wide */
+    z-index: -1;
+
+    background-image: url(image-path("hero-cropped_320.jpg"));
+
+    @media screen and (min-width: 320px), screen and (min-height: 213px) {
+      background-image: url(image-path("hero-cropped_640.jpg"));
+    }
+
+    @media screen and (min-width: 640px), screen and (min-height: 427px) {
+      background-image: url(image-path("hero-cropped_800.jpg"));
+    }
+
+    @media screen and (min-width: 800px), screen and (min-height: 533px) {
+      background-image: url(image-path("hero-cropped_1024.jpg"));
+    }
+
+    @media screen and (min-width: 1024px), screen and (min-height: 683px) {
+      background-image: url(image-path("hero-cropped_1440.jpg"));
+    }
+  }
+
+  > .overlay {
+    @include double-gradient($angle:            $vertical-angle,
+                             $color-one:        $image-gradient-color-top,
+                             $transparency-one: $transparency-top,
+                             $color-two:        $image-gradient-color-bottom,
+                             $transparency-two: $transparency-bottom);
+    z-index: -1; // the articles button gets darkend otherwise
+
+    &:after {
+      @include double-gradient($angle:            $horizontal-angle,
+                               $color-one:        $image-gradient-color-left,
+                               $transparency-one: $transparency-left,
+                               $color-two:        $image-gradient-color-right,
+                               $transparency-two: $transparency-right);
+      content: " ";
+    }
+  }
+
+  .external-profiles-link-list {
+    bottom: 0;
+    left: 0;
+    font-size: 1.8em;
+    position: fixed;
+    right: 0;
+    text-align: center;
+
+    @include media($medium-screen-up) {
+      font-size: modular-scale(3);
+    }
+
+    @include media($large-screen-up) {
+      @include vertical-center($position: fixed);
+      font-size: modular-scale(3);
+      right: inherit; // keep from taking up whole width of screen
+      text-align: left;
+    }
+
+    > li {
+      @include media($large-screen-up) {
+        display: block;
+      }
+    }
+  }
+
+  .external-profile-link {
+    $glow-parameters: (
+      "glow-only-on-hover": true,
+      "glow-base-color": transparentize($homepage-color, .5),
+      "hover-color": transparentize($homepage-color, 1),
+      "normal-glow": $base-blue,
+      "transition-speed": 400ms
+    );
+    @include neon-glow($glow-parameters...);
+    color: $homepage-color;
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: $homepage-color;
+    }
+  }
+
+  .external-profile-link-text {
+    border-left: .1em $base-orange solid;
+    color: $homepage-color;
+    display: inline-block;
+    font-weight: bold;
+    font-size: modular-scale(-1);
+    line-height: $homepage-external-profile-link-text-line-height;
+    margin-top: $homepage-external-profile-link-text-top-margin;
+    padding-left: .4em;
+    vertical-align: top;
+  }
+
+  .nav-link {
+    @include outlined-link($homepage-color, $base-orange);
+  }
+}
+
+.homepage-main {
+  @include vertical-center();
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+
+.homepage-hero-copy {
+  margin-bottom: 1em;
+  margin-top: 0;
+  font-size: modular-scale(-1);
+
+  @include media(min-height 400px) {
+    margin-bottom: 3em;
+    font-size: 1em;
+  }
+}
+
+.homepage-hero-title {
+  border-right: 0;
+  color: $homepage-color;
+  font-weight: 400;
+  font-size: modular-scale(4);
+  margin: 0;
+
+  @include media($medium-screen-up) {
+    border-right: .05em solid $base-orange;
+    display: inline-block;
+    font-size: modular-scale(5);
+    margin: 0 .2em 0 0;
+    padding: 0 .2em .2em 0;
+  }
+}
+
+.homepage-hero-subtitle {
+  color: $homepage-color;
+  font-weight: 300;
+  font-family: $heading-font-family;
+  font-size: modular-scale(3);
+  margin: 0 0 modular-scale(-1);
+  text-transform: lowercase;
+
+  @include media($medium-screen-up) {
+    display: inline-block;
+    margin-top: .45em;
+    position: relative;
+    vertical-align: top;
+  }
+}
+
+.homepage-hero-cta {
+  @include outlined-link($homepage-color, $base-orange);
+  font-size: modular-scale(2);
+  font-weight: bold;
+
+  > .angle-double-right-icon {
+    padding: 0;
+    margin: 0 -.2em 0 0;
+
+    &:before {
+      margin: 0;
+    }
+  }
+}

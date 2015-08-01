@@ -1,0 +1,16 @@
+$footer-height: 8em; // actually footer + external profile links
+
+footer {
+  text-align: center;
+  color: $light-gray;
+
+  > p > a {
+    color: $base-orange-faded;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $base-orange-faded-action;
+    }
+  }
+}

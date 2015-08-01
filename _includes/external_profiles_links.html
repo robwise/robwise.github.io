@@ -1,0 +1,11 @@
+<aside class="external-profile-links">
+  <ul class="external-profiles-link-list">
+    {% for external_profile in site.data.external_profiles %}
+      <li>
+        <a href="{{ external_profile.url }}" target="_blank" class="external-profile-link" id="{{ external_profile.name }}" aria-label="{{ external_profile.name }}">
+          <span class="{{ external_profile.css_class }}" aria-hidden="true"></span></a>
+        <span class="external-profile-link-text is-hidden">{{ external_profile.tooltip }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

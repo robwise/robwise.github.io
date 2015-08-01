@@ -1,0 +1,78 @@
+.post-content {
+  @include media($medium-screen-up) {
+    font-size: 1.2em;
+  }
+
+  @include media($large-screen-up) {
+    font-size: 1.175em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: modular-scale(3); // Don't use this though, start with H2s in posts
+  }
+
+  h2 {
+    font-size: modular-scale(2);
+  }
+
+  h3 {
+    font-size: modular-scale(1);
+    font-style: italic;
+  }
+
+  h4 {
+    font-size: modular-scale(0);
+    font-weight: bold;
+  }
+
+  figure {
+    text-align: center;
+    margin: 2em auto;
+    display: block;
+    width: 87%;
+  }
+
+  img {
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: em(2) em(2) em(15) $light-gray;
+  }
+}
+
+.post-title {
+  font-size: modular-scale(3);
+  margin-bottom: 0;
+  font-weight: bold;
+
+  @include media($medium-screen-up) {
+    font-size: modular-scale(4);
+  }
+}
+
+.post-meta {
+  @include media($medium-screen-up) {
+    font-size: modular-scale(1);
+  }
+}
+
+.post-disqus-thread {
+  margin-bottom: 3em;
+}
+
+.post-share {
+  text-align: center;
+
+  .twitter-share-icon {
+    font-size: 3em;
+  }
+}

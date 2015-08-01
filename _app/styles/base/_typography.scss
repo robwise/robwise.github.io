@@ -1,0 +1,79 @@
+html {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($action-color, 15%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  font-style: italic;
+  display: block;
+  margin: 2em;
+  padding: em(15) em(20) .1em 1em;
+  line-height: 1.2;
+  text-align: justify;
+  border-left: em(8) solid $base-orange-faded;
+  box-shadow: em(2) em(2) em(15) $light-gray;
+}
+
+cite {
+  font-style: normal;
+}
+
+figcaption {
+  text-align: center;
+  font-size: .9em;
+  padding: 0 $base-spacing;
+  font-style: italic;
+  font-weight: bold;
+}
