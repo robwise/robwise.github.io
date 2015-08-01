@@ -8,7 +8,7 @@ url: "/" # the base hostname & protocol for your site
 twitter_username: RobAWise
 github_username:  robwise
 timezone: America/New_York
-permalink: /:title # no trailing slash may cause issues
+permalink: /:title/
 keep_files: []
 exclude: ["bower.json",
           "package.json",
