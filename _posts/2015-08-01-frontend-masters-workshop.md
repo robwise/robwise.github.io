@@ -23,20 +23,20 @@ Teaching the class was Scott Moss ([@scotups][scott-moss-twitter]), former [Hack
     <picture>
         <source
             media="(min-width: 1025px)"
-            srcset="../../_assets/images/FrontendMastersScott-fullshot_800.webp 1x,
-                    ../../_assets/images/FrontendMastersScott-fullshot_1600.webp 2x"
+            srcset="../../images/FrontendMastersScott-fullshot_800.webp 1x,
+                    ../../images/FrontendMastersScott-fullshot_1600.webp 2x"
             type="image/webp">
         <source
             media="(min-width: 1025px)"
-            srcset="../../_assets/images/FrontendMastersScott-fullshot_800.jpg 1x,
-                    ../../_assets/images/FrontendMastersScott-fullshot_1600.jpg 2x">
+            srcset="../../images/FrontendMastersScott-fullshot_800.jpg 1x,
+                    ../../images/FrontendMastersScott-fullshot_1600.jpg 2x">
         <source
-            srcset="../../_assets/images/FrontendMastersScott-closeup_400.webp 1x,
-                    ../../_assets/images/FrontendMastersScott-closeup_800.webp 2x"
+            srcset="../../images/FrontendMastersScott-closeup_400.webp 1x,
+                    ../../images/FrontendMastersScott-closeup_800.webp 2x"
             type="image/webp">
         <img
-            src="../../_assets/images/FrontendMastersScott-closeup_400.jpg" alt="Scott Moss at Frontend Masters"
-            srcset= "../../_assets/images/FrontendMastersScott-closeup_800.jpg 2x">
+            src="../../images/FrontendMastersScott-closeup_400.jpg" alt="Scott Moss at Frontend Masters"
+            srcset= "../../images/FrontendMastersScott-closeup_800.jpg 2x">
     </picture>
     <figcaption>Scott Moss lecturing: the livestream included a cool picture-in-picture thing that gave us a high-resolution view of his screen</figcaption>
 </figure>
@@ -49,22 +49,22 @@ I ended up really enjoying the live chat feature. Being able to talk with other 
     <picture>
         <source
             media="(min-width: 1025px)"
-            srcset="../../_assets/images/FrontendMastersClassroom_800.webp 1x,
-                    ../../_assets/images/FrontendMastersClassroom_1500.webp 2x"
+            srcset="../../images/FrontendMastersClassroom_800.webp 1x,
+                    ../../images/FrontendMastersClassroom_1500.webp 2x"
             type="image/webp">
         <source
             media="(min-width: 1025px)"
-            srcset="../../_assets/images/FrontendMastersClassroom_800.jpg 1x,
-                    ../../_assets/images/FrontendMastersClassroom_1500.jpg 2x">
+            srcset="../../images/FrontendMastersClassroom_800.jpg 1x,
+                    ../../images/FrontendMastersClassroom_1500.jpg 2x">
         <source
-            srcset="../../_assets/images/FrontendMastersClassroom_400.webp 1x,
-                    ../../_assets/images/FrontendMastersClassroom_800.webp 2x,
-                    ../../_assets/images/FrontendMastersClassroom_1500.webp 3x"
+            srcset="../../images/FrontendMastersClassroom_400.webp 1x,
+                    ../../images/FrontendMastersClassroom_800.webp 2x,
+                    ../../images/FrontendMastersClassroom_1500.webp 3x"
             type="image/webp">
         <img
-            src="../../_assets/images/FrontendMastersClassroom_400.jpg" alt="My In-Person Classmates"
-            srcset= "../../_assets/images/FrontendMastersClassroom_800.jpg 2x,
-                     ../../_assets/images/FrontendMastersClassroom_1500.jpg 3x">
+            src="../../images/FrontendMastersClassroom_400.jpg" alt="My In-Person Classmates"
+            srcset= "../../images/FrontendMastersClassroom_800.jpg 2x,
+                     ../../images/FrontendMastersClassroom_1500.jpg 3x">
     </picture>
     <figcaption>My In-Person Classmates</figcaption>
 </figure>
@@ -81,11 +81,11 @@ First of all, the term *component* can mean different things. Here the term is r
     <picture>
         <source
             media="(min-width: 1025px)"
-            srcset="../../_assets/images/AngularComponents_250.png 1x,
-                    ../../_assets/images/AngularComponents_490.png 2x">
+            srcset="../../images/AngularComponents_250.png 1x,
+                    ../../images/AngularComponents_490.png 2x">
         <img
-            src="../../_assets/images/AngularComponents_250.png" alt="Components Folder Structure"
-            srcset= "../../_assets/images/AngularComponents_490.png 2x">
+            src="../../images/AngularComponents_250.png" alt="Components Folder Structure"
+            srcset= "../../images/AngularComponents_490.png 2x">
     </picture>
     <figcaption>Components Folder Structure</figcaption>
 </figure>
