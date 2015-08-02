@@ -102,6 +102,8 @@ Each module explicitly defines its own dependencies to be loaded separately from
 ### Style Bundling
 Scott also showed us a cool Webpack feature whereby we could bundle our styles by requiring them as though they were JavaScript modules. Webpack would then automatically dynamically insert the styles into the page's style tag. I'm not sure if that's a great idea or not&mdash;having everything in a single JS file would presumably mean that even a trivial change in your JS code would bust the entire cache even if nothing about your styles had changed (the reverse would be true as well). I'm also not sure if there would be some sort of site-wide flash of styles the way you can get [FOUT with fonts loaded dynamically][css-tricks-fout].
 
+[_**edit 8/2/2015:** I just recently read that Webpack will only inline your styles this way if the styles are sufficiently small so that the cache-busting drawback wouldn't be a big deal._]
+
 ### ES2015
 While we were at it, we relied heavily on some new ES2015 features. You've probably heard that ES6 was recently confirmed into spec, so now it's referred to as ES2015. 
 
