@@ -1,37 +1,38 @@
 # Site settings
-title: Rob Wise
-email: robert.wise@outlook.com
-description: > # this means to ignore newlines until "baseurl:"
-  Personal website and blog for Rob Wise (web developer).
-baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://robwise.github.io" # the base hostname & protocol for your site
+baseurl: ""                      # the subpath of your site, e.g. /blog/
+permalink: :categories/:title
+timezone: America/New_York
+
+title: Rob Wise
+description: Personal website and blog for Rob Wise (web developer).
+email: robert.wise@outlook.com
 twitter_username: RobAWise
 github_username:  robwise
-timezone: America/New_York
-permalink: :categories/:title
+
 keep_files: []
-exclude: ["bower.json",
-          "package.json",
-          "LICENSE",
-          "README.md",
-          "gulpfile.js",
-          "_app",
-          "node_modules",
-          "*.sublime-project",
+exclude: ["*.sublime-project",
           "*.sublime-workspace",
+          "_app",
           "Gemfile",
-          "Gemfile.lock"]
+          "Gemfile.lock",
+          "gulpfile.js",
+          "LICENSE",
+          "node_modules",
+          "package.json",
+          "README.md",
+          "bower.json"]
 
 # Markdown settings
 markdown: redcarpet
 redcarpet:
-  extensions: ["tables",
-               "autolink",
-               "strikethrough",
-               "space_after_headers",
-               "with_toc_data",
+  extensions: ["autolink",
                "fenced_code_blocks",
-               "no_intra_emphasis"]
+               "no_intra_emphasis",
+               "space_after_headers",
+               "strikethrough",
+               "with_toc_data",
+               "tables"]
 
 # Defaults (these are overridden if explicitly set in front matter)
 defaults:
@@ -40,14 +41,14 @@ defaults:
       path: ""
       type: "posts"
     values:
+      author: "Rob Wise"
       categories: blog
       layout: "post"
-      author: "Rob Wise"
   -
     scope:
       path: ""
       type: "drafts"
     values:
+      author: "Rob Wise"
       categories: blog
       layout: "post"
-      author: "Rob Wise"
