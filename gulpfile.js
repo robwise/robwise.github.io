@@ -1,21 +1,22 @@
+var autoprefixer = require('gulp-autoprefixer');
+var browserSync  = require('browser-sync').create();
+var concat       = require('gulp-concat');
+var del          = require('del');
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
-var sass         = require('gulp-ruby-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss    = require('gulp-minify-css');
 var jshint       = require('gulp-jshint');
-var uglify       = require('gulp-uglify');
-var responsive   = require('gulp-responsive'); // requires sharp and vips (brew)
-var rename       = require('gulp-rename');
-var concat       = require('gulp-concat');
+var minifycss    = require('gulp-minify-css');
 var notify       = require('gulp-notify');
+var rename       = require('gulp-rename');
+var responsive   = require('gulp-responsive'); // requires sharp and vips (brew)
 var run          = require('gulp-run');
 var runSequence  = require('run-sequence');
-var browserSync  = require('browser-sync').create();
+var sass         = require('gulp-ruby-sass');
 var size         = require('gulp-size');
-var paths        = require('./_app/gulp/paths');
+var uglify       = require('gulp-uglify');
+
 var config       = require('./_app/gulp/config');
-var del          = require('del');
+var paths        = require('./_app/gulp/paths');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies if
 // production flag is passed, and then outputs file to appropriate location(s)
