@@ -1,5 +1,4 @@
 (function showExternalLinkTextOnHover() {
-  console.log('showExternalLinkTextOnHover executed');
   $(document).ready(function() {
 
     var animationType = 'fade',
