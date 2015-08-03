@@ -153,6 +153,7 @@ gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: paths.siteDir,
     ghostMode: false, // do not mirror clicks, reloads, etc. (performance)
+    logFileChanges: true,
     open: false       // do not open the browser
   });
 
