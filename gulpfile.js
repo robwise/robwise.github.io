@@ -15,6 +15,7 @@ var browserSync  = require('browser-sync').create();
 var size         = require('gulp-size');
 var paths        = require('./_app/gulp/paths');
 var config       = require('./_app/gulp/config');
+var del          = require('del');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies if
 // production flag is passed, and then outputs file to appropriate location(s)
@@ -34,6 +35,10 @@ gulp.task('build:styles', function() {
     .on('error', gutil.log);
 });
 
+gulp.task('clean:styles', function(cb) {
+  del([paths.jekyllDir + 'main.css', paths.siteDir + 'main.css'], cb);
+});
+
 // Concatenates (and in production, uglifies) JS files and outputs result to
 // the appropriate location(s).
 gulp.task('build:scripts', function() {
@@ -46,6 +51,10 @@ gulp.task('build:scripts', function() {
     .pipe(gulp.dest(paths.jekyllDir))
     .pipe(gulp.dest(paths.siteDir))
     .on('error', gutil.log);
+});
+
+gulp.task('clean:scripts', function(cb) {
+  del([paths.jekyllDir + 'main.js', paths.siteDir + 'main.js'], cb);
 });
 
 // Creates optimized versions of files with different qualities, sizes, and
@@ -82,8 +91,16 @@ gulp.task('build:images', function() {
     .pipe(size({showFiles: true}));
 });
 
+gulp.task('clean:images', function(cb) {
+  del([paths.jekyllImageFiles, paths.siteImageFiles], cb);
+});
+
 // Places all fonts in appropriate location(s)
 gulp.task('build:fonts', ['fontello:fonts']);
+
+gulp.task('clean:fonts', function(cb) {
+  del([paths.jekyllFontFiles, paths.siteFontFiles], cb);
+});
 
 // Runs Jekyll build
 gulp.task('build:jekyll', function() {
@@ -92,13 +109,25 @@ gulp.task('build:jekyll', function() {
     .on('error', gutil.log);
 });
 
+// Only deletes what's in the site folder
+gulp.task('clean:jekyll', function(cb) {
+  del([paths.siteDir], cb);
+});
+
+gulp.task('clean', ['clean:jekyll',
+                    'clean:fonts',
+                    'clean:images',
+                    'clean:scripts',
+                    'clean:styles']);
+
 // Builds site
 // Optionally pass the --production flag to enable minimizers/uglifiers
 // Optionally pass the --drafts flag to enable including drafts
-gulp.task('build',
-          ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
-          function(cb) {
-  runSequence('build:jekyll', cb);
+gulp.task('build', function(cb) {
+  runSequence('clean',
+              ['build:scripts', 'build:images', 'build:styles', 'build:fonts'],
+              'build:jekyll',
+              cb);
 });
 
 // Default Task: builds site

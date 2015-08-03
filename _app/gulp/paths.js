@@ -46,10 +46,11 @@ paths.appJsFilesGlob       = paths.appJsFiles       + paths.jsPattern;
 paths.appImageFilesGlob    = paths.appImageFiles    + paths.imagePattern;
 
 // Jekyll files globs
-paths.jekyllPostFilesGlob  = paths.jekyllPostFiles  + paths.markdownPattern;
-paths.jekyllDraftFilesGlob = paths.jekyllDraftFiles + paths.markdownPattern;
-paths.jekyllHtmlFilesGlob  = paths.jekyllDir        + paths.htmlPattern;
-paths.jekyllXmlFilesGlob   = paths.jekyllDir        + paths.xmlPattern;
+paths.jekyllPostFilesGlob    = paths.jekyllPostFiles  + paths.markdownPattern;
+paths.jekyllDraftFilesGlob   = paths.jekyllDraftFiles + paths.markdownPattern;
+paths.jekyllHtmlFilesGlob    = paths.jekyllDir        + paths.htmlPattern;
+paths.jekyllXmlFilesGlob     = paths.jekyllDir        + paths.xmlPattern;
+paths.jekyllImageFilesGlob   = paths.jekyllImageFiles + paths.imagePattern;
 
 // Site files globs
 paths.siteHtmlFilesGlob    = paths.siteDir + paths.htmlPattern;
