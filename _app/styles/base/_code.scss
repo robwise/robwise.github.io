@@ -12,9 +12,14 @@ code {
 }
 
 code {
-  padding: em(1) em(5);
   border: $code-border;
   border-radius: 3px;
+  font-size: modular-scale(-1);
+  padding: em(1) em(5);
+
+  @include media($medium-screen-up) {
+    font-size: inherit;
+  }
 }
 
 pre {
