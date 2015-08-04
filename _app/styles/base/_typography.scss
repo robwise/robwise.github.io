@@ -3,8 +3,16 @@ html {
   -webkit-font-smoothing: antialiased;
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: $base-font-size;
   line-height: $base-line-height;
+  font-size: 40%;
+
+  @include media(min-height $very-small-height) {
+    font-size: 70%;
+  }
+
+  @include media(min-height $small-height) {
+    font-size: $base-font-size;
+  }
 }
 
 h1,
