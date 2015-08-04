@@ -52,6 +52,13 @@
   transform: translate(0, -50%);
 }
 
+@mixin default-layout-padding() {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @function image-path($image-name) {
   @return "../images/" + $image-name;
 }

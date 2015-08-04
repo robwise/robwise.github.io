@@ -83,8 +83,7 @@
 
 .post-disqus-thread {
   margin-bottom: 3em;
-  margin-left: 1em;
-  margin-right: 1em;
+  @include default-layout-padding();
 }
 
 .post-share {
