@@ -29,12 +29,10 @@ $homepage-external-profile-link-text-top-margin: $external-profile-link-font-siz
     content: " ";
     display: block;
     max-width: none;
-    opacity: 1;
     position: fixed;
     transform: scale(1.1); /* images are actually 1.1 their named size to
                               account for this: e.g., hero-cropped_320.jpg is actualy
                               1.1*320 px wide */
-    z-index: -1;
 
     background-image: url(image-path("hero-cropped_320.jpg"));
 
@@ -61,7 +59,6 @@ $homepage-external-profile-link-text-top-margin: $external-profile-link-font-siz
                              $transparency-one: $transparency-top,
                              $color-two:        $image-gradient-color-bottom,
                              $transparency-two: $transparency-bottom);
-    z-index: -1; // the articles button gets darkend otherwise
 
     &:after {
       @include double-gradient($angle:            $horizontal-angle,
