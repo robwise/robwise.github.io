@@ -3,7 +3,7 @@
 
   > .content {
     @include outer-container();
-    padding: 0 2em 2em;
+    padding: 0 0 2em;
     margin-bottom: (-.5 * $footer-height);
     margin-left: auto;
     margin-right: auto;
@@ -16,6 +16,27 @@
 
     @include media($extra-large-screen) {
       min-height: 80%;
+    }
+
+    h1 {
+      font-size: modular-scale(2);
+
+      @include media($medium-screen-up) {
+        font-size: modular-scale(3);
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

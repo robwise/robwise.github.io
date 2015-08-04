@@ -1,4 +1,5 @@
 $grey-color-light: $light-gray;
+$code-border: 1px solid darken($grey-color-light, 20%);
 
 /**
  * Code formatting
@@ -6,14 +7,14 @@ $grey-color-light: $light-gray;
 pre,
 code {
   font-family: $code-font-family;
-  border: 1px solid darken($grey-color-light, 20%);
-  border-radius: 3px;
   background-color: $grey-color-light;
   word-break: keep-all;
 }
 
 code {
   padding: em(1) em(5);
+  border: $code-border;
+  border-radius: 3px;
 }
 
 pre {
@@ -21,8 +22,12 @@ pre {
   margin: 2em 0;
   padding: em(8) em(12);
   overflow-x: scroll;
+  border-top: $code-border;
+  border-bottom: $code-border;
 
   @include media($medium-screen-up) {
+    border: $code-border;
+    border-radius: 3px;
     font-size: modular-scale(-1);
     margin: 2em;
   }

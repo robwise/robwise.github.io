@@ -18,9 +18,9 @@ title: "Articles"
             <a class="articles-list-item-link" href="{{ post.url | prepend: site.baseurl }}">
               {{ post.title }}</a>
           </h2>
-          <div class="articles-list-item-excerpt">
+          <p class="articles-list-item-excerpt">
             {{ post.excerpt | strip_newlines | strip_html }}
-          </div>
+          </p>
           <p class="articles-list-item-detail">
             <time>{{ post.date | date: "%b %-d, %Y" }}</time>
           </p>

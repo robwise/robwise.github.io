@@ -2,6 +2,7 @@
   Note that a post is actually a layout within the default layout, so also
   check the default layout styles if you can't find the style here.
  */
+
 .post-content {
   @include media($medium-screen-up) {
     font-size: 1.2em;
@@ -43,13 +44,24 @@
     text-align: center;
     margin: 2em auto;
     display: block;
-    width: 87%;
   }
 
   img {
     margin-right: auto;
     margin-left: auto;
     box-shadow: em(2) em(2) em(15) $light-gray;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    padding: 1em 0 .5em;
+
+    @include media($medium-screen-up) {
+      margin: 2em;
+      padding: em(15) em(20) .1em 1em;
+    }
   }
 }
 
