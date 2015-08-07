@@ -2,7 +2,15 @@
   <div id="disqus_thread" class="post-disqus-thread"></div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES * * */
-      var disqus_shortname = 'rob-wise';
+      // see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+      var disqus_shortname = '{{site.disqus_shortname}}';
+      {% if site.development == false %}
+        var disqus_url = '{{page.url | prepend: site.baseurl | prepend: site.url}}';
+        {% if page.title %}
+          var disqus_identifier = '{{page.title}}';
+          var disqus_title = '{{page.title}}';
+        {% endif %}
+      {% endif %}
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {

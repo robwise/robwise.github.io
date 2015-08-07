@@ -105,8 +105,11 @@ gulp.task('clean:fonts', function(cb) {
 
 // Runs Jekyll build
 gulp.task('build:jekyll', function() {
+  var shellCommand = 'bundle exec jekyll build --config _config.yml,_app/localhost_config.yml';
+  if (config.drafts) { shellCommand += ' --drafts'; };
+
   return gulp.src(paths.jekyllDir)
-    .pipe(run('bundle exec jekyll build' + (config.drafts ? ' --drafts' : '')))
+    .pipe(run(shellCommand))
     .on('error', gutil.log);
 });
 
@@ -158,7 +161,7 @@ gulp.task('serve', ['build'], function() {
   });
 
   // Watch site settings
-  gulp.watch('_config.yml', ['build:jekyll:watch']);
+  gulp.watch(['_config.yml', '_app/localhost_config.yml'], ['build:jekyll:watch']);
 
   // Watch app .scss files, changes are piped to browserSync
   gulp.watch('_app/styles/**/*.scss', ['build:styles']);

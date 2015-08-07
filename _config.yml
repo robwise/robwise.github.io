@@ -9,6 +9,7 @@ description: Personal website and blog for Rob Wise (web developer).
 email: robert.wise@outlook.com
 twitter_username: RobAWise
 github_username:  robwise
+disqus_shortname: 'rob-wise'
 
 keep_files: []
 exclude: ["*.sublime-project",

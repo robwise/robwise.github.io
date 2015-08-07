@@ -1,0 +1,8 @@
+# Overrides variables of configs loaded before it. Necessary for absolute
+# paths to point to the local environment instead of the production
+# site.
+url: "" # the base hostname & protocol for your site
+baseurl: ""           # the subpath of your site, e.g. /blog/
+
+development: true
+disqus_shortname: 'rob-wise-dev'
