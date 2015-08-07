@@ -40,7 +40,7 @@
   <!-- Main javascript -->
   <script type="text/javascript" src="{{"/main.js" | prepend: site.baseurl | prepend: site.url}}" async></script>
 
-  {% if site.development == false %}
+  {% if site.development != true %}
 
     <!-- Google Analytics -->
     <script async>
