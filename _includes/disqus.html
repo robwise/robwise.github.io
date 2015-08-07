@@ -4,7 +4,7 @@
       /* * * CONFIGURATION VARIABLES * * */
       // see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
       var disqus_shortname = '{{site.disqus_shortname}}';
-      {% if site.development == false %}
+      {% if site.development != true %}
         var disqus_url = '{{page.url | prepend: site.baseurl | prepend: site.url}}';
         {% if page.title %}
           var disqus_identifier = '{{page.title}}';
