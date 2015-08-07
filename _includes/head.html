@@ -32,13 +32,13 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ "/main.css" }}">
+  <link rel="stylesheet" href="{{"/main.css" | prepend: site.baseurl | prepend: site.url}}">
 
   <!-- jQuery -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
   <!-- Main javascript -->
-  <script type="text/javascript" src="{{ "/main.js" }}" async></script>
+  <script type="text/javascript" src="{{"/main.js" | prepend: site.baseurl | prepend: site.url}}" async></script>
 
   <!-- Google Analytics -->
   <script async>
