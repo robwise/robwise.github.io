@@ -1,4 +1,4 @@
-(function showExternalLinkTextOnHover() {
+(function showExternalProfileLinkTextOnHover() {
   $(document).ready(function() {
 
     var animationType = 'fade',
