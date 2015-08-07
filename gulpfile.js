@@ -18,18 +18,19 @@ var uglify       = require('gulp-uglify');
 var config       = require('./_app/gulp/config');
 var paths        = require('./_app/gulp/paths');
 
-// Uses Sass compiler to process styles, adds vendor prefixes, minifies if
-// production flag is passed, and then outputs file to appropriate location(s)
+// Uses Sass compiler to process styles, adds vendor prefixes, minifies,
+// and then outputs file to appropriate location(s)
+
 gulp.task('build:styles', function() {
   return sass(paths.appSassFiles + '/main.scss', {
-    style: (paths.production ? 'compressed' : 'expanded'),
+    style: 'compressed',
     trace: true,
     loadPath: [paths.appSassFiles,
                paths.bowerComponentsDir + 'bourbon/app/assets/stylesheets',
                paths.bowerComponentsDir + 'neat/app/assets/stylesheets',
                paths.bowerComponentsDir + 'font-awesome/scss']
   }).pipe(autoprefixer({browsers: ['last 2 versions', 'ie >= 10']}))
-    .pipe(config.production ? minifycss() : gutil.noop())
+    .pipe(minifycss())
     .pipe(gulp.dest(paths.jekyllDir))
     .pipe(gulp.dest(paths.siteDir))
     .pipe(browserSync.stream())
@@ -40,15 +41,14 @@ gulp.task('clean:styles', function(cb) {
   del([paths.jekyllDir + 'main.css', paths.siteDir + 'main.css'], cb);
 });
 
-// Concatenates (and in production, uglifies) JS files and outputs result to
+// Concatenates and uglifies JS files and outputs result to
 // the appropriate location(s).
 gulp.task('build:scripts', function() {
   var source = [paths.appJsFilesGlob];
-  if (!config.production) { source.push(paths.tota11y); } // dev tool only
 
   return gulp.src(source)
     .pipe(concat('main.js'))
-    .pipe(config.production ? uglify() : gutil.noop())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.jekyllDir))
     .pipe(gulp.dest(paths.siteDir))
     .on('error', gutil.log);
@@ -125,7 +125,6 @@ gulp.task('clean', ['clean:jekyll',
                     'clean:styles']);
 
 // Builds site
-// Optionally pass the --production flag to enable minimizers/uglifiers
 // Optionally pass the --drafts flag to enable including drafts
 gulp.task('build', function(cb) {
   runSequence('clean',
@@ -242,13 +241,7 @@ gulp.task('fontello:fonts', function() {
 // that only the newly downloaded folder matches the glob
 gulp.task('fontello', ['fontello:css', 'fontello:fonts']);
 
-// Places tota11y accessibility tool JS file in proper location
-gulp.task('tota11y', function() {
-  return gulp.src(paths.bowerComponentsDir + 'tota11y/build/tota11y.min.js')
-    .pipe(gulp.dest(paths.appVendorFiles));
-});
-
 // Updates Bower packages and Ruby gems, runs post-update operations, and re-builds
 gulp.task('update', ['update:bower', 'update:bundle'], function(cb) {
-  runSequence(['normalize-css', 'tota11y'], 'build', cb);
+  runSequence('normalize-css', 'build', cb);
 });

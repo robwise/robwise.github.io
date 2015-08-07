@@ -4,7 +4,6 @@
   "dependencies": {
     "normalize.css": "~3.0.3",
     "bourbon": "~4.2.3",
-    "neat": "~1.7.2",
-    "tota11y": "~0.0.9"
+    "neat": "~1.7.2"
   }
 }
