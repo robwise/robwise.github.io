@@ -4,7 +4,7 @@
   > .content {
     @include outer-container();
     padding: 0 0 2em;
-    margin-bottom: (-.5 * $footer-height);
+    // margin-bottom: (-.2 * $footer-height);
     margin-left: auto;
     margin-right: auto;
     min-height: 78%;

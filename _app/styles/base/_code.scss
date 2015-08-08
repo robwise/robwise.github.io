@@ -15,36 +15,33 @@ code {
   border: $code-border;
   border-radius: 3px;
   font-size: modular-scale(-1);
-  padding: em(1) em(5);
+  padding: 0 (em(5) / 2);
+  margin-left: em(5) / 2;
+  margin-right: em(5) / 2;
 
   @include media($medium-screen-up) {
-    font-size: inherit;
+    font-size: .9em;
   }
 }
 
 pre {
-  font-size: modular-scale(-2);
   margin: 2em 0;
   padding: em(8) em(12);
-  overflow-x: scroll;
+  word-wrap: break-word;
+
   border-top: $code-border;
   border-bottom: $code-border;
 
   @include media($medium-screen-up) {
     border: $code-border;
     border-radius: 3px;
-    font-size: modular-scale(-1);
-    margin: 2em;
-  }
-
-  @include media($large-screen-up) {
-    font-size: 1em;
+    margin: 2em 1rem;
   }
 
   > code {
     border: 0;
-    padding-right: 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
