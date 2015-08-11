@@ -8,11 +8,11 @@ tags:
     - ux
 ---
 
-This is a quick post showing how to use JavaScript to make links to external websites open in a new window (or tab) instead of in the current window. This is useful for [Jekyll][jekyll] blogs because the markdown converter won't do this for you. I included two versions: one that uses straight JavaScript, and one that requires [jQuery][jquery] but is shorter.
+This is a quick post showing how to use JavaScript to make links to external websites open in a new window (or tab) instead of in the current window. This is useful for [Jekyll][jekyll] blogs because the Markdown converters don't do this for you. I included two versions: one that uses straight JavaScript, and one that requires [jQuery][jquery] but is shorter.
 
 Both versions work basically the same way: grab all anchor tags (`<a href="#">`) that are linking to somewhere other than your development environment or a page on your site and then attribute `target="_blank"` to those tags. Because this is JavaScript, users with JavaScript disabled will still experience the old behavior, but otherwise won't be adversely affected.
 
-I wrote a RegEx that should work for most slugs, just replace the string in the `website` variable with your own and make sure to escape any backslashes. You can reference mine for an example of what I mean&mdash;I escaped the period with a backslash (which is normal for regexes), but because it's JS I also need to escape *that* backslash.
+I wrote a regex that should work for most slugs, just replace the string in the `website` variable with your own and make sure to escape any backslashes. You can reference mine for an example of what I mean&mdash;I escaped the period with a backslash (which is normal for regexes), but because it's JS I also need to escape *that* backslash.
 
 ## Straight JavaScript
 
