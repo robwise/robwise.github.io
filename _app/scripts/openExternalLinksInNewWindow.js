@@ -1,8 +1,11 @@
 (function openExternalLinksInNewWindow() {
   $(document).ready(function() {
 
-    var internalLinkRegex =
-      /^(((http:\/\/|https:\/\/)?robwise\.github\.io)|(localhost:)|(\/.*))(\/.*)?/m;
+    var website = 'robwise\\.github\\.io';
+
+    var internalLinkRegex = new RegExp('^((((http:\\/\\/|https:\\/\\/)(www\\.)?)?'
+                                       + website
+                                       + ')|(localhost:\\d{4})|(\\/.*))(\\/.*)?$', '');
 
     $('a').filter(function() {
       var href = $(this).attr('href');
