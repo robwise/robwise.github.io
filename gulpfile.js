@@ -20,7 +20,6 @@ var paths        = require('./_app/gulp/paths');
 
 // Uses Sass compiler to process styles, adds vendor prefixes, minifies,
 // and then outputs file to appropriate location(s)
-
 gulp.task('build:styles', function() {
   return sass(paths.appSassFiles + '/main.scss', {
     style: 'compressed',
@@ -44,9 +43,7 @@ gulp.task('clean:styles', function(cb) {
 // Concatenates and uglifies JS files and outputs result to
 // the appropriate location(s).
 gulp.task('build:scripts', function() {
-  var source = [paths.appJsFilesGlob];
-
-  return gulp.src(source)
+  return gulp.src(paths.appJsFilesGlob)
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest(paths.jekyllDir))
