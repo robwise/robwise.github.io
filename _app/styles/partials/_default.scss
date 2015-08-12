@@ -4,18 +4,17 @@
   > .content {
     @include outer-container();
     padding: 0 0 2em;
-    // margin-bottom: (-.2 * $footer-height);
     margin-left: auto;
     margin-right: auto;
-    min-height: 78%;
+    min-height: 78%; // Sticky footer nonsense
 
     @include media($medium-screen) {
       max-width: 55em;
-      min-height: 75%;
+      min-height: 75%; // Sticky footer nonsense
     }
 
     @include media($extra-large-screen) {
-      min-height: 80%;
+      min-height: 80%; // Sticky footer nonsense
     }
 
     h1 {
@@ -32,8 +31,19 @@
     h4,
     h5,
     h6,
-    p {
+    p,
+    ul {
       @include default-layout-padding();
+    }
+
+    ul {
+      margin-bottom: 1em;
+      margin-top: 1em;
+    }
+
+    li {
+      margin-left: 1em;
+      list-style: disc;
     }
   }
 

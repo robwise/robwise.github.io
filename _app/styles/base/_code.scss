@@ -45,6 +45,10 @@ pre {
   }
 }
 
+h4 + .highlight > pre {
+  margin-top: 0;
+}
+
 /**
  * Syntax highlighting styles
  */
