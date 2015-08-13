@@ -19,10 +19,13 @@ $article-image-vert-alignment: top;
 }
 
 .articles-list-rss {
-  font-size: .5em;
   position: relative;
-  padding-left: .3em;
+  // padding-left: .3em;
   display: inline-block;
+
+  > .rss-icon {
+    font-size: 1.5em;
+  }
 }
 
 .articles-list-item {

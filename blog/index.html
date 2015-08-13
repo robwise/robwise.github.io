@@ -5,10 +5,7 @@ title: "Articles"
 <main class="articles">
   <h1 class="articles-list-heading">Articles</h2>
     <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="articles-list-rss">
-      <span class="fa-stack">
-        <span class="fa fa-square-o fa-stack-2x"></span>
-        <span class="fa fa-rss fa-stack-1x"></span>
-      </span></a>
+      <span class="rss-icon" aria-label="rss feed"></span></a>
   <hr>
   <ul class="articles-list">
     {% for post in site.posts %}
