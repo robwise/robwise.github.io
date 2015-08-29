@@ -1,5 +1,5 @@
 ---
-title:  "Integrating Gulp into your Jekyll Workflow"
+title:  "Integrating Gulp into Your Jekyll Workflow"
 tags: 
     - jekyll
     - gulp
