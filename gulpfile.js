@@ -80,6 +80,8 @@ gulp.task('build:images', function() {
   addToImageConfigs('FrontendMastersScott-fullshot', 'jpg', [400, 800, 1600], ['jpg', 'webp'], '95', 1);
   addToImageConfigs('FrontendMastersClassroom', 'jpg', [400, 800, 1500], ['jpg', 'webp'], '95', 1);
   addToImageConfigs('AngularComponents', 'png', [250, 490], ['png'], '100', 1);
+  addToImageConfigs('UseSecureWebFonts-JavaScriptConsoleMessage', 'png', [400, 2562], ['png'], '100', 1);
+  addToImageConfigs('UseSecureWebFonts-UnsafeContentShield', 'png', [400, 2400], ['png'], '100', 1);
 
   return gulp.src(paths.appImageFilesGlob)
     .pipe(responsive(imageConfigs, {errorOnUnusedImage: false, progressive: true}))
