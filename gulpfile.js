@@ -135,7 +135,7 @@ gulp.task('build', function(cb) {
 // Default Task: builds site
 gulp.task('default', ['build']);
 
-// Special tasksfor building and then reloading BrowserSync
+// Special tasks for building and then reloading BrowserSync
 gulp.task('build:jekyll:watch', ['build:jekyll'], function(cb) {
   browserSync.reload();
   cb();
@@ -155,6 +155,7 @@ gulp.task('serve', ['build'], function() {
     server: paths.siteDir,
     ghostMode: false, // do not mirror clicks, reloads, etc. (performance)
     logFileChanges: true,
+    logLevel: 'debug',
     open: false       // do not open the browser
   });
 
