@@ -19,7 +19,7 @@ code {
   padding: 0 em(5);
 
   @include media($medium-screen-up) {
-    font-size: .9em;
+    font-size: .75em;
   }
 }
 
