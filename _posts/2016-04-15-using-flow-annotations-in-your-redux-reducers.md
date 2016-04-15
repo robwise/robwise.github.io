@@ -17,8 +17,7 @@ Facebook's [Flow][flow] type checker can be a wonderful ally for JavaScript deve
 ```js
 /* loosely based on Redux's todos example */
 function todoReducer(
-  state: {
-    type: string,
+  state: ?{
     id: number,
     text: string,
     completed: boolean,
@@ -34,11 +33,11 @@ function todoReducer(
 ) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return {
+      return state.push({
         id: action.id,
         text: action.text,
         completed: false,
-      };
+      });
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state;
@@ -53,7 +52,7 @@ function todoReducer(
 }
 ```
 
-When an action is dispatched in Redux, it is dispatched to all reducers, so it is quite possible to receive actions in the `todoReducer` that have nothing to do with a `todo`. Even if the action _does_ have to do with the `todo`, different actions implicitly come with different payloads attached to them. All of this means we are forced to make heavy use of [maybe types][flow-maybe-types], and the result is a bunch of very loose annotations that hardly check anything at all.
+When an action is dispatched in Redux, it is dispatched to all reducers, so it is quite possible to receive actions in a reducer that have nothing to do with that reducer. Even if the action _does_ have to do with the reducer, different actions implicitly come with different payloads attached to them. All of this means we are forced to make heavy use of [maybe types][flow-maybe-types], and the result is a bunch of very loose annotations that hardly check anything at all.
 
 ## Using Flow with the Object-Mapping Reducer Style
 Curiously, the Redux docs hint that Redux's use of switch statements may have caused developers to turn elsewhere:
@@ -69,8 +68,8 @@ Instead of using a switch statement to determine what our action's `type` is, we
 You can make a quick `createReducer` function to help set all of this up (this is loosely based on the example out of the Redux docs):
 
 ```js
-function createReducer(initialState: Object, handlers: Object) {
-  return function reducer(state: Object = initialState, action: {type: string}) {
+function createReducer(initialState: ?{}, handlers: {}) {
+  return function reducer(state: ?{} = initialState, action: {type: string}) {
     return handlers.hasOwnProperty(action.type) ? handlers[action.type](state, action) : state;
   };
 }
@@ -80,10 +79,10 @@ function createReducer(initialState: Object, handlers: Object) {
  Refactoring the todos example from above using our new `createReducer` function gives us this:
 
 ```js
-const initialState = {};
+const initialState = undefined;
 
 const handlers = {
-  ADD_TODO(state: Object, action: {id: number, text: string}) {
+  ADD_TODO(state: void, action: {id: number, text: string}) {
     return {
       id: action.id,
       text: action.text,
@@ -112,7 +111,7 @@ If for some reason you want to use action names dynamically or are importing the
 ```js
 const handlers = {
   // calling a property
-  [actionTypes.addTodo](state: Object, action: {id: number, text: string}) {
+  [actionTypes.addTodo](state: void, action: {id: number, text: string}) {
     // ...
   },
   // executing a function, it all works
