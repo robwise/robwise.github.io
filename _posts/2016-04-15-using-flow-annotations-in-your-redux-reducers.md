@@ -53,9 +53,7 @@ function todoReducer(
 }
 ```
 
-Because the annotations must describe _all_ potential actions, we are forced to annotate every potential property of the action that we might need to use, and at the same time make all of the action's properties into [maybe types][flow-maybe-types].
-
-When an action is dispatched in Redux, it is dispatched to all reducers, so it is quite possible to receive actions in the `todoReducer` that have nothing to do with a `todo`. Every single property of the action besides `type` must therefore be a maybe type because unrelated actions may not contain any of these properties at all. Even if this reducer _does_ receive an action having to do with the reducer, different actions implicitly come with different payloads attached to them. We are forced to write very loose annotations.
+When an action is dispatched in Redux, it is dispatched to all reducers, so it is quite possible to receive actions in the `todoReducer` that have nothing to do with a `todo`. Even if the action _does_ have to do with the `todo`, different actions implicitly come with different payloads attached to them. All of this means we are forced to make heavy use of [maybe types][flow-maybe-types], and the result is a bunch of very loose annotations that hardly check anything at all.
 
 ## Using Flow with the Object-Mapping Reducer Style
 Curiously, the Redux docs hint that Redux's use of switch statements may have caused developers to turn elsewhere:
