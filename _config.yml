@@ -25,15 +25,13 @@ exclude: ["*.sublime-project",
           "bower.json"]
 
 # Markdown settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["autolink",
-               "fenced_code_blocks",
-               "no_intra_emphasis",
-               "space_after_headers",
-               "strikethrough",
-               "with_toc_data",
-               "tables"]
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
 # Defaults (these are overridden if explicitly set in front matter)
 defaults:

@@ -4,7 +4,7 @@ $code-border: 1px solid darken($grey-color-light, 20%);
 /**
  * Code formatting
  */
-pre,
+pre.highlight,
 code {
   font-family: $code-font-family;
   background-color: $grey-color-light;
@@ -16,9 +16,6 @@ code {
   border: $code-border;
   border-radius: 3px;
   font-size: modular-scale(-1);
-  // padding: 0 (em(5) / 2);
-  // margin-left: em(5) / 2;
-  // margin-right: em(5) / 2;
   padding: 0 em(5);
 
   @include media($medium-screen-up) {
