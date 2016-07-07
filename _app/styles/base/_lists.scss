@@ -1,19 +1,16 @@
-ul,
-ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  &%default-ul {
-    list-style-type: disc;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
+.l-default > .content {
+  ul,
+  ol {
+    margin: $small-spacing;
+    padding: $small-spacing;
   }
 
-  &%default-ol {
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ol > li {
     list-style-type: decimal;
-    margin-bottom: $small-spacing;
-    padding-left: $base-spacing;
   }
 }
 

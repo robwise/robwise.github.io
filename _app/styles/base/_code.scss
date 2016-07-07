@@ -6,6 +6,7 @@ $code-border: 1px solid darken($grey-color-light, 20%);
  */
 pre.highlight,
 code {
+  margin-top: 1em;
   font-family: $code-font-family;
   background-color: $grey-color-light;
   word-break: keep-all;
