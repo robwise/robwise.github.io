@@ -2,7 +2,7 @@
 title: Is Programming a Unique Discipline?
 tags:
   - opinion
-  - general programming
+  - general-programming
 published: True
 ---
 

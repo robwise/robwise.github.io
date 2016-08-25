@@ -1,6 +1,6 @@
 ---
-title:  "Integrating Gulp into Your Jekyll Workflow"
-tags: 
+title: Integrating Gulp into Your Jekyll Workflow
+tags:
     - jekyll
     - gulp
     - devops
@@ -32,7 +32,7 @@ There are [some scripts][deploy-to-github-repo] for automating this process if t
 ## App Files vs. Jekyll Files
 In my workflow, Gulp handles building the assets (images, scripts, styles), and Jekyll handles building the HTML and just copies the generated Gulp files as static files.
 
-GitHub Pages requires that the source files, what I will call the **Jekyll files**, be in the root directory of the repo. Ultimately, everything that GitHub Pages needs to build the site with Jekyll will need to be present here. 
+GitHub Pages requires that the source files, what I will call the **Jekyll files**, be in the root directory of the repo. Ultimately, everything that GitHub Pages needs to build the site with Jekyll will need to be present here.
 
 The trick is that only some of these files are the original source files, while others are generated output resulting from running files through Gulp. Any files that need to be run through Gulp before they become Jekyll files are what I will call the **app files**.
 
@@ -101,13 +101,13 @@ The app files are all put in a folder that is hidden from Jekyll (which is accom
 ```
 
 ### Jekyll Configs
-As I listed above, we actually have two configs. The first is the main Jekyll config that goes in the root directory. This is what GitHub will use to build your site and also where almost all of your config options should go. 
+As I listed above, we actually have two configs. The first is the main Jekyll config that goes in the root directory. This is what GitHub will use to build your site and also where almost all of your config options should go.
 
 #### config.yml
 ```yaml
 url: "https://mysite.github.io" # the base hostname & protocol for your site
 baseurl: ""                     # the subpath of your site, e.g. /blog/
-#... 
+#...
 title: My Site
 disqus_shortname: 'your-shortname' # ignore this if not using Disqus
 keep_files: []
@@ -116,7 +116,7 @@ exclude: ["_app",
           "Gemfile.lock",
           "gulpfile.js",
           "node_modules",
-          "package.json"] # Don't forget that Jekyll automatically 
+          "package.json"] # Don't forget that Jekyll automatically
                           # excludes files with a dot prefix
 ```
 
@@ -171,7 +171,7 @@ gulp.task('build:styles', function() {
 #### build:images
 
 ```js
-// Creates optimized versions of images, 
+// Creates optimized versions of images,
 // then outputs to appropriate location(s)
 gulp.task('build:images', function() {
   return gulp.src(paths.appImageFilesGlob)
@@ -229,8 +229,8 @@ gulp.task('build', function(cb) {
 #### build:jekyll:watch, build:scripts:watch
 
 ```js
-/* Sass and image file changes can be streamed directly to BrowserSync without 
-reloading the entire page. Other changes, such as changing JavaScript or 
+/* Sass and image file changes can be streamed directly to BrowserSync without
+reloading the entire page. Other changes, such as changing JavaScript or
 needing to run jekyll build require reloading the page, which BrowserSync
 recommends doing by setting up special watch tasks.*/
 // Special tasks for building and then reloading BrowserSync
@@ -296,9 +296,9 @@ So that's it&mdash;build your site by running `gulp build`. Run a local BrowserS
 
 [browser-sync]: http://www.browsersync.io/docs/gulp/
 [deploy-to-github-repo]: https://github.com/X1011/git-directory-deploy
-[disqus-developer-recommendations]: https://help.disqus.com/customer/portal/articles/1053796-best-practices-for-staging-development-and-preview-sites 
+[disqus-developer-recommendations]: https://help.disqus.com/customer/portal/articles/1053796-best-practices-for-staging-development-and-preview-sites
 [disqus]: https://disqus.com/
-[github-pages]: https://pages.github.com/ 
+[github-pages]: https://pages.github.com/
 [gulp]: http://gulpjs.com/
 [heroku]: https://www.heroku.com/
 [jekyll-plugins]: http://jekyllrb.com/docs/plugins/
@@ -306,4 +306,3 @@ So that's it&mdash;build your site by running `gulp build`. Run a local BrowserS
 [list-of-github-plugins]: https://help.github.com/articles/using-jekyll-plugins-with-github-pages/
 [livereload]: http://livereload.com/
 [markdown]: http://daringfireball.net/projects/markdown/
-

@@ -3,7 +3,7 @@ title: Console Logging Immutable.js Objects
 tags:
   - javascript
   - react
-  - immutable.js
+  - immutable-js
   - debugging
 ---
 
