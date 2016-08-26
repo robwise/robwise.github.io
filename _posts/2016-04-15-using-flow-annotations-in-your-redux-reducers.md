@@ -9,8 +9,6 @@ tags:
 
 Facebook's [Flow][flow] type checker can be a wonderful ally for JavaScript development, but I found that in order to use it in my [Redux][redux] reducers, I needed to switch to what the Redux docs refer to as an "object mapping" style of writing reducers. This is as opposed to the normal `switch` style that is more commonly seen. You can find more information about the two styles in the [reducing boilerplate][redux-reducing-boilerplate] section of the docs (towards the bottom).
 
-**Disclaimer**: On my team, we actually use [babel-plugin-typecheck][babel-plugin-typecheck] as opposed to the static compiler.
-
 ## Flow is Hindered by Reducers Written as Switch Statements
  I don't have anything against the `switch` syntax in general, but writing your reducers this way makes it hard to use Flow effectively. Because our actions can potentially come with many different types of payloads, or no payloads at all, we have to effectively make a kitchen sink of annotations:
 
