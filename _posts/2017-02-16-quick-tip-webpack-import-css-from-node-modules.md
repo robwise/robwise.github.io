@@ -7,7 +7,7 @@ tags:
   - css
 ---
 
-Here's a quick tip for importing CSS directly from your `node_modules` folder when using webpack and the CSS Loader. This is superior to just copy-and-pasting the CSS code because it ensures that project will always be in sync with your version of the library, you don't have to remember to update the styles manually, and it's a lot less work!
+Here's a quick tip for importing CSS directly from your `node_modules` folder when using webpack and the CSS Loader. This is superior to just copy-and-pasting the CSS code because it ensures that your styles will always be in sync with your version of the library, you don't have to remember to update the styles manually, and it's a lot less work!
 
 ## Use ~
 ```css
