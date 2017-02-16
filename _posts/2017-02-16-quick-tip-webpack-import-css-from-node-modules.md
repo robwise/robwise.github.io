@@ -1,6 +1,7 @@
 ---
 title: 'Quick Tip: Import CSS from Node Modules Using Webpack and CSS-Loader'
 tags:
+  - quick-tip
   - webpack
   - css-loader
   - css
