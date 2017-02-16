@@ -20,6 +20,12 @@
           </li>
         {% endif %}
       {% endfor %}
+
+      {% if page.canonical == nil %}
+      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+      {% else %}
+      <link rel="canonical" href="{{ page.canonical }}"/>
+      {% endif %}
     </ul>
   </nav>
 </header>
