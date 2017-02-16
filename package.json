@@ -21,5 +21,8 @@
     "gulp-uncss": "^1.0.2",
     "gulp-util": "^3.0.6",
     "run-sequence": "^1.1.1"
+  },
+  "scripts": {
+    "start": "gulp serve"
   }
 }
