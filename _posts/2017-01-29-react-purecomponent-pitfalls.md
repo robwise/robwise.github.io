@@ -1,6 +1,6 @@
 ---
 title: "React PureComponent Pitfalls"
-canonical-url: https://blog.shakacode.com/react-purecomponent-pitfalls-d057882f4b6e
+canonical: https://blog.shakacode.com/react-purecomponent-pitfalls-d057882f4b6e
 tags:
 - react
 - javascript
