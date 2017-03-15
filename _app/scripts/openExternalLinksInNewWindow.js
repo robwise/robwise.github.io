@@ -1,7 +1,7 @@
 (function openExternalLinksInNewWindow() {
   $(document).ready(function() {
 
-    var website = 'robwise\\.github\\.io';
+    var website = window.location.hostname;
 
     var internalLinkRegex = new RegExp('^((((http:\\/\\/|https:\\/\\/)(www\\.)?)?'
                                        + website
