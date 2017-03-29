@@ -131,7 +131,7 @@ const Parent = () => {
 ```
 
 # Premature Optimization
-Remember that you only need to bother with PureComponent if you are noticing performance problems and have determined that it’s unnecessary re-renders causing them (a great way to determine this is to use React’s [performance tools][performance-tools]). I rarely actually need to use PureComponent, especially because my team uses React which comes with its own performance optimizations to `shouldComponentUpdate`. But, it can be incredibly useful in certain cases.
+Remember that you only need to bother with PureComponent if you are noticing performance problems and have determined that it’s unnecessary re-renders causing them (a great way to determine this is to use React’s [performance tools][performance-tools]). I rarely actually need to use PureComponent, especially because my team uses Redux which comes with its own performance optimizations to `shouldComponentUpdate`. But, it can be incredibly useful in certain cases.
 
 [pure-component]: https://facebook.github.io/react/docs/react-api.html#react.purecomponent
 [recompose-hoc]: https://github.com/acdlite/recompose/blob/master/docs/API.md#onlyupdateforproptypes
