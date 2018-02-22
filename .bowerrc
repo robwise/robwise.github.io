@@ -1,5 +1,5 @@
 {
-  "directory": "src/_bower_components",
+  "directory": "app/bower_components",
   "analytics": false,
   "timeout": 120000
 }
