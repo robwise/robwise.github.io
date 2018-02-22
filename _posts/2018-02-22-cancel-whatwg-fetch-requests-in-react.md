@@ -31,7 +31,7 @@ class MyComponent extends React.Component {
       .get('http://www.example.com', { signal: this.abortController.signal })
       .then(data => this.setState({ data }))
       .catch(error => {
-        if (error.name === 'AbortController') return; // expected, this is the abort, so just return
+        if (error.name === 'AbortError') return; // expected, this is the abort, so just return
         throw error; // must be some other error, handle however you normally would
       });
 
