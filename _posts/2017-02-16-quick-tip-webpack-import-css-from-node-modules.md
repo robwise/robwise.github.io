@@ -17,7 +17,7 @@ div {
   background-image: url("~some-package/some-image.png");
 }
 ```
-For more info, check out the [CSS Loader Options][https://github.com/webpack-contrib/css-loader#options] docs.
+For more info, check out the [CSS Loader Options](https://github.com/webpack-contrib/css-loader#options) docs.
 
 ## Don't forget :global if using CSS Modules
 If you are using [CSS Modules](https://github.com/css-modules/css-modules), make sure to use the `:global` selector so that the classnames are not inadvertently hashed.
@@ -28,4 +28,4 @@ If you are using [CSS Modules](https://github.com/css-modules/css-modules), make
 }
 ```
 
-For more info, check out the [CSS Modules Exceptions][https://github.com/css-modules/css-modules#exceptions] docs.
+For more info, check out the [CSS Modules Exceptions](https://github.com/css-modules/css-modules#exceptions) docs.
