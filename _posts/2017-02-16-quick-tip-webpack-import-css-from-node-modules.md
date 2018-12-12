@@ -17,10 +17,10 @@ div {
   background-image: url("~some-package/some-image.png");
 }
 ```
-For more info, check out the [CSS Loader Options][css-loader] docs.
+For more info, check out the [CSS Loader Options][https://github.com/webpack-contrib/css-loader#options] docs.
 
 ## Don't forget :global if using CSS Modules
-If you are using [CSS Modules](), make sure to use the `:global` selector so that the classnames are not inadvertently hashed.
+If you are using [CSS Modules](https://github.com/css-modules/css-modules), make sure to use the `:global` selector so that the classnames are not inadvertently hashed.
 
 ```css
 :global {
@@ -28,8 +28,4 @@ If you are using [CSS Modules](), make sure to use the `:global` selector so tha
 }
 ```
 
-For more info, check out the [CSS Modules Exceptions][css-modules] docs.
-
-
-[css-loader]: https://github.com/webpack-contrib/css-loader#options
-[css-modules]: https://github.com/css-modules/css-modules#exceptions
+For more info, check out the [CSS Modules Exceptions][https://github.com/css-modules/css-modules#exceptions] docs.
