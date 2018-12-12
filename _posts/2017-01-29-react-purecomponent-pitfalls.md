@@ -21,7 +21,7 @@ Once a component mounts, re-renders typically happen for two reasons:
 If either of these happens, but they don’t change what the component (or its children) render, you’ve got an unnecessary re-render.
 
 ## Preventing re-renders with PureComponent
-It’s a good idea to write components so that the `render` method returns the same result given the same props and state. There are several reasons for doing this, but the relevant reason, in this case is that it allows us to use the [PureComponent][https://facebook.github.io/react/docs/react-api.html#react.purecomponent] class from React.
+It’s a good idea to write components so that the `render` method returns the same result given the same props and state. There are several reasons for doing this, but the relevant reason, in this case is that it allows us to use the [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent) class from React.
 
 *Note: In order to use PureComponent, you must ensure that you never mutate your state or props.*
 
@@ -38,7 +38,7 @@ PureComponent prevents re-renders if the props and state don’t change, but it 
 ## Potential Pitfalls when Using PureComponent
 
 ### Failing to re-render due to mutating props or state
-This is explained pretty well in the [React docs][https://facebook.github.io/react/docs/optimizing-performance.html#examples], so I will only briefly mention it here, but you must be careful to never mutate your props or state. PureComponent only does a shallow comparison, so if you mutate a prop, PureComponent will not realize that the prop changed and will not re-render when it actually should.
+This is explained pretty well in the [React docs](https://facebook.github.io/react/docs/optimizing-performance.html#examples), so I will only briefly mention it here, but you must be careful to never mutate your props or state. PureComponent only does a shallow comparison, so if you mutate a prop, PureComponent will not realize that the prop changed and will not re-render when it actually should.
 
 ### Unnecessary re-renders due to passing entire collection to each item
 One of the ways you can undermine the ability of PureComponent to do its job is by passing the entire collection as a prop to each item in the collection:
@@ -112,7 +112,7 @@ class Parent extends React.Component {
 }
 ```
 
-However, if some of these props aren’t being used and they change, the child will be re-rendered unnecessarily. You can manually refactor this to only pass down the props the child needs, or you can use [this HOC][https://github.com/acdlite/recompose/blob/master/docs/API.md#onlyupdateforproptypes] from recompose that will cause the pure component to only receive props that are defined in that component’s prop types. I encourage you to check out this library as there are lots of other great HOCs. I especially like this approach because it also allows me to use the terser SFC syntax which I much prefer (although it still uses a class under the hood):
+However, if some of these props aren’t being used and they change, the child will be re-rendered unnecessarily. You can manually refactor this to only pass down the props the child needs, or you can use [this HOC](https://github.com/acdlite/recompose/blob/master/docs/API.md#onlyupdateforproptypes) from recompose that will cause the pure component to only receive props that are defined in that component’s prop types. I encourage you to check out this library as there are lots of other great HOCs. I especially like this approach because it also allows me to use the terser SFC syntax which I much prefer (although it still uses a class under the hood):
 
 ```js
 const Person = (props) => <div>{props.firstName}</div>;
@@ -131,4 +131,4 @@ const Parent = () => {
 ```
 
 # Premature Optimization
-Remember that you only need to bother with PureComponent if you are noticing performance problems and have determined that it’s unnecessary re-renders causing them (a great way to determine this is to use React’s [performance tools][https://facebook.github.io/react/docs/perf.html#printwasted]). I rarely actually need to use PureComponent, especially because my team uses Redux which comes with its own performance optimizations to `shouldComponentUpdate`. But, it can be incredibly useful in certain cases.
+Remember that you only need to bother with PureComponent if you are noticing performance problems and have determined that it’s unnecessary re-renders causing them (a great way to determine this is to use React’s [performance tools](https://facebook.github.io/react/docs/perf.html#printwasted)). I rarely actually need to use PureComponent, especially because my team uses Redux which comes with its own performance optimizations to `shouldComponentUpdate`. But, it can be incredibly useful in certain cases.
